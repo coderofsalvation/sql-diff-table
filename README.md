@@ -40,6 +40,10 @@ And then
 
 Multiple-insertions-per-query takes place using smart-buffering, which makes importing large datasets ultrafast.
 
+## Hint
+
+If you want to compare data of large collections with items of different formats try using [DataMapper](https://github.com/coderofsalvation/datamapper-minimal) before you insert it using `createTableFormFields()`
+
 ## License
 
 BSD
