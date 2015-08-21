@@ -16,23 +16,25 @@ And then
     $a = new SQLTableDiff( "sync_products_A", $dbConn, $dbConn );
     $b = new SQLTableDiff( "sync_products_B", $dbConn, $dbConn );
 
-    // fill the tables
+    // create 2 SQL tables based on the object fields 
     $a->createTableFromFields( array_keys($productsA[0]) );
     $b->createTableFromFields( array_keys($productsB[0]) );
+    // fill the 2 SQL tables
     foreach( $productsA as $p ) $sm->addRow( $p );
     foreach( $productsB as $p ) $si->addRow( $p );
 
     /*
-     * get products which have similar ids but different stock
+     * get products which have similar id-value but different stock-value
      */
 
     $filter = (object)array(
       'tableA' => "sync_products_A",
       'tableB' => "sync_products_B",
-      'id'     => "sku",
-      'fields' => array("stock")
+      'id'     => "sku",              // match on id field
+      'fields' => array("stock")      // compare these fields
     );
 
+    // SQL query is generated and the differences are returned as a result
     $result = $sm->diff( $filter);
     // there you go!
 
