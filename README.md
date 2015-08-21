@@ -42,7 +42,11 @@ Multiple-insertions-per-query takes place using smart-buffering, which makes imp
 
 ## Hint
 
-If you want to compare data of large collections with items of different formats try using [DataMapper](https://github.com/coderofsalvation/datamapper-minimal) before you insert it using `createTableFormFields()`
+If you want to compare large collections with items, sometimes the items are not compatible.
+For example, if you want to compare products from an csv export with products in your database.
+In that case you might want to transform the collections to a middleware-format.
+[DataMapper](https://github.com/coderofsalvation/datamapper-minimal) allows you to do that.
+After you mapped it to your middleware-format, then you can proceed inserting it into the db using `createTableFormFields()`
 
 ## License
 
