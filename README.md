@@ -19,16 +19,16 @@ And then
     // fill the tables
     $a->createTableFromFields( array_keys($productsA[0]) );
     $b->createTableFromFields( array_keys($productsB[0]) );
-    foreach( $productsMagento as $p ) $sm->addRow( $p );
-    foreach( $productsImport  as $p ) $si->addRow( $p );
+    foreach( $productsA as $p ) $sm->addRow( $p );
+    foreach( $productsB as $p ) $si->addRow( $p );
 
     /*
      * get products which have similar ids but different stock
      */
 
     $filter = (object)array(
-      'tableA' => "sync_products_magento",
-      'tableB' => "sync_products_import",
+      'tableA' => "sync_products_A",
+      'tableB' => "sync_products_B",
       'id'     => "sku",
       'fields' => array("stock")
     );
