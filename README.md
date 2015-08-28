@@ -38,6 +38,10 @@ And then
     $result = $sm->diff( $filter);
     // there you go!
 
+## Todo 
+
+* use closure for SQL query execution
+
 ## Notes
 
 Multiple-insertions-per-query takes place using smart-buffering, which makes importing large datasets ultrafast.

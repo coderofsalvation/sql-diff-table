@@ -158,7 +158,7 @@ class SQLTableDiff {
             $diffFields[] = sprintf("a.%s != b.%s", $field, $field );
         $sqlQuery = $sqlSelect . " ( " . implode( $diffFields, " or ") . " ) ";
         $this->update( "DEBUG", "executing:  ".$sqlQuery );
-        return $this->readDb->query( $sqlQuery )->execute();
+        return $this->readDb->fetchAll( $sqlQuery );
     }
 
 }

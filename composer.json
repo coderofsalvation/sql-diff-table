@@ -2,7 +2,7 @@
     "name": "coderofsalvation/sql-table-diff",
     "description": "Find differences between 2 similar SQL tables. Compare large collections of data fast and stylish", 
     "minimum-stability": "dev",
-    "version": "0.1.1",
+    "version": "0.1.2",
     "license": "BSD-3-Clause",
     "authors": [
         {
